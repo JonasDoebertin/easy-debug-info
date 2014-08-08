@@ -1,0 +1,119 @@
+/*!
+ * Easy Debug Info 1.0.0
+ * Copyright by Jonas Döbertin
+ */
+
+@import "mixins";
+@import "icons";
+
+
+/**
+ * MAIN WRAP
+ */
+.easydebuginfo-wrap{
+	max-width: 1050px;
+}
+
+
+/**
+ * HEADER
+ */
+.easydebuginfo-header{
+	background: #ffffff;
+	border-radius: 4px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, .05);
+	margin: 16px 0;
+	padding: 15px;
+
+    /* clearfix */
+    &:after{
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+
+    .easydebuginfo-header__heading{
+        margin: 0;
+        padding: 0;
+		color: #222222;
+    }
+
+    .easydebuginfo-header__introduction{
+        font-size: 16px;
+		margin: 0;
+		color: #777777;
+    }
+
+    .easydebuginfo-header__column{
+        float: left;
+		min-width: 200px;
+		width: 20%;
+		margin-right: 5%;
+
+        &:last-child{
+            margin-right: 0;
+        }
+
+        h3{
+            margin: 20px 0 0;
+			font-size: 16px;
+			font-weight: 600;
+            color: #444444;
+			line-height: 2.1;
+        }
+
+        ul{
+			margin: 15px 15px 15px 0;
+		}
+
+        li{
+            list-style: none;
+            line-height: 16px;
+            font-size: 14px;
+            margin: 0 0 5px 0;
+        }
+
+        a{
+            text-decoration: none;
+			display: inline-block;
+			padding-bottom: 8px;
+			font-weight: 400;
+        }
+    }
+
+    .easydebuginfo-header__column--explanation{
+        width: 50%;
+    }
+}
+
+
+/**
+ * ALERT
+ */
+.easydebuginfo-old-report-alert{
+    background: #d35400;
+    border-radius: 4px;
+    margin: 20px 0;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+
+/**
+ * REPORT
+ */
+.easydebuginfo-report{
+    background: #ffffff;
+    border-radius: 4px;
+    margin: 20px 0;
+    padding: 15px;
+
+    pre{
+        margin: 0;
+        font-family: Consolas, Monaco, monospace;
+        direction: ltr;
+        overflow-x: auto;
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "name": "jdpowered/wp-debuginfo",
+    "description": "Generate a debug file easily",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Jonas Döbertin",
+            "email": "hello@jd-powered.net"
+        }
+    ],
+    "minimum-stability": "stable",
+    "config": {
+		"preferred-install": "dist"
+	},
+    "require": {
+        "php": ">=5.3.0",
+        "nesbot/Carbon": "1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "jdpowered\\EasyDebugInfo\\": "classes/"
+        }
+    }
+}
