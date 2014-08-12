@@ -1,11 +1,11 @@
 {
-    "name": "jdpowered/wp-debuginfo",
-    "description": "Generate a debug file easily",
+    "name": "jdpowered/easy-debug-info",
+    "description": "Making collecting extensive and extendable debug info finally easy.",
     "license": "GPL",
     "authors": [
         {
             "name": "Jonas Döbertin",
-            "email": "hello@jd-powered.net"
+            "email": "hallo@jonasdoebertin.net"
         }
     ],
     "minimum-stability": "stable",

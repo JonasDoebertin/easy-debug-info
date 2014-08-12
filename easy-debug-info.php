@@ -4,7 +4,7 @@
 /*
 	Plugin Name:   Easy Debug Info
 	Plugin URI:
-	Description:   Print debug info easily
+	Description:   Making collecting extensive and extendable debug info finally easy
 	Version:       1.0.0
 	Author:        Jonas Döbertin
 	Author URI:
