@@ -34,7 +34,7 @@ class PluginsReporter extends BaseReporter implements Reporter {
      */
     public function getName()
     {
-        return __('Plugins Report', 'easydebuginfo');
+        return __('Plugins', 'easydebuginfo');
     }
 
     /**
@@ -55,7 +55,6 @@ class PluginsReporter extends BaseReporter implements Reporter {
     public function report()
     {
         $this->pluginsReport();
-        //$dropins = get_dropins();
 
         return $this->lines;
     }
@@ -70,8 +69,9 @@ class PluginsReporter extends BaseReporter implements Reporter {
         foreach($this->getPlugins() as $plugin => $info)
         {
             $this->addHeadingLine($info['name']);
-            $this->addLabeledLine('Version', $info['version'], 4);
-            $this->addLabeledLine('Basefile', $plugin, 3);
+            $this->addLabeledLine('Version', $info['version']);
+            $this->addLabeledLine('Basefile', $plugin);
+            $this->addLabeledBooleanLine('Activated', $this->isActivePlugin($plugin));
             $this->addLabeledLine('Plugin URI', $info['pluginuri']);
             $this->addBlankLine();
         }
@@ -94,6 +94,17 @@ class PluginsReporter extends BaseReporter implements Reporter {
         }
 
         return $plugins;
+    }
+
+    /**
+     * Check whether the plugin is activated.
+     *
+     * @param  string $plugin
+     * @return bool
+     */
+    protected function isActivePlugin($plugin)
+    {
+        return is_plugin_active($plugin);
     }
 
 }

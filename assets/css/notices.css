@@ -21,25 +21,10 @@
 
 .easydebuginfo-icon-logo:before { content: "\e606"; }
 
-/** MAIN WRAP */
-.easydebuginfo-wrap { max-width: 1050px; }
-
-/** HEADER */
-.easydebuginfo-header { background: #ffffff; border-radius: 4px; -webkit-box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05); box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05); margin: 16px 0; padding: 15px; /* clearfix */ }
-.easydebuginfo-header:after { content: ""; display: table; clear: both; }
-.easydebuginfo-header .easydebuginfo-header__heading { margin: 0; padding: 0; color: #222222; }
-.easydebuginfo-header .easydebuginfo-header__introduction { font-size: 16px; margin: 0; color: #777777; }
-.easydebuginfo-header .easydebuginfo-header__column { float: left; min-width: 200px; width: 20%; margin-right: 5%; }
-.easydebuginfo-header .easydebuginfo-header__column:last-child { margin-right: 0; }
-.easydebuginfo-header .easydebuginfo-header__column h3 { margin: 20px 0 0; font-size: 16px; font-weight: 600; color: #444444; line-height: 2.1; }
-.easydebuginfo-header .easydebuginfo-header__column ul { margin: 15px 15px 15px 0; }
-.easydebuginfo-header .easydebuginfo-header__column li { list-style: none; line-height: 16px; font-size: 14px; margin: 0 0 5px 0; }
-.easydebuginfo-header .easydebuginfo-header__column a { text-decoration: none; display: inline-block; padding-bottom: 8px; font-weight: 400; }
-.easydebuginfo-header .easydebuginfo-header__column--explanation { width: 50%; }
-
-/** ALERT */
-.easydebuginfo-old-report-alert { background: #d35400; border-radius: 4px; margin: 20px 0; padding: 15px; color: #ffffff; font-size: 14px; }
-
-/** REPORT */
-.easydebuginfo-report { background: #ffffff; border-radius: 4px; margin: 20px 0; padding: 15px; }
-.easydebuginfo-report pre { margin: 0; font-family: Consolas, Monaco, monospace; direction: ltr; overflow-x: auto; }
+div.updated.easydebuginfo-legacy { border: none; background: #34495e; color: #ffffff; padding: 20px 20px; overflow: hidden; }
+div.updated.easydebuginfo-legacy .easydebuginfo-logo { float: left; overflow: hidden; margin-right: 20px; }
+div.updated.easydebuginfo-legacy .easydebuginfo-logo .easydebuginfo-icon-logo { width: 25px; height: 25px; display: block; float: left; font-family: 'easydebuginfoicons'; color: #ffffff; font-size: 25px; line-height: 25px; }
+div.updated.easydebuginfo-legacy .easydebuginfo-logo .easydebuginfo-title { font-size: 20px; line-height: 25px; height: 25px; padding: 0; margin: 0 0 0 10px; float: left; text-rendering: optimizeLegibility; }
+div.updated.easydebuginfo-legacy .easydebuginfo-message { float: left; font-size: 14px; padding: 0; margin: 4px 0 0; text-rendering: optimizeLegibility; }
+div.updated.easydebuginfo-legacy .easydebuginfo-message a { color: #ffffff; font-weight: bold; }
+div.updated.easydebuginfo-legacy .easydebuginfo-message a:focus, div.updated.easydebuginfo-legacy .easydebuginfo-message a:hover { text-decoration: underline; }

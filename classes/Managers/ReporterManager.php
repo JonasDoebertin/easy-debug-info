@@ -27,6 +27,8 @@ class ReporterManager {
     public function __construct()
     {
 
+        $this->registerReporter('jdpowered\EasyDebugInfo\Reporters\GeneralReporter');
+        $this->registerReporter('jdpowered\EasyDebugInfo\Reporters\StatisticsReporter');
         $this->registerReporter('jdpowered\EasyDebugInfo\Reporters\PluginsReporter');
 
     }
@@ -121,9 +123,16 @@ class ReporterManager {
         $this->lines[] = $content;
     }
 
-    protected function addLabeledLine($label, $content, $padding = 1)
+    protected function addLabeledLine($label, $content, $padding = 20)
     {
-        $this->lines[] = $label . ':' . $this->pad(' ', $padding) . $content;
+        $label = $label . ':';
+        $this->lines[] = $this->pad($label, $padding, ' ') . $content;
+    }
+
+    protected function addLabeledBooleanLine($label, $boolean, $padding = 20)
+    {
+        $content = ($boolean) ? 'Yes' : 'No';
+        $this->addLabeledLine($label, $content, $padding);
     }
 
     protected function addHeadingLine($heading)
@@ -147,12 +156,12 @@ class ReporterManager {
     protected function addDividerLine($weight = 'normal')
     {
         $char = ($weight == 'bold') ? '=' : '-';
-        $this->lines[] = $this->pad($char, 80);
+        $this->lines[] = $this->pad('', 100, $char);
     }
 
-    protected function pad($char, $length)
+    protected function pad($input, $length, $char)
     {
-        return str_pad('', $length, $char, STR_PAD_RIGHT);
+        return str_pad($input, $length, $char, STR_PAD_RIGHT);
     }
 
 }

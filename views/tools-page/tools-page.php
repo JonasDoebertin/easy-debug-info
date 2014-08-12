@@ -20,10 +20,10 @@
         <div class="easydebuginfo-header__column">
             <h3>Further Help</h3>
             <ul>
-                <li><i class="easydebuginfo-icon-twitter"></i> <a class="" href="">Send a Tweet</a></li>
-                <li><i class="easydebuginfo-icon-help"></i> <a class="" href="">Get Support</a></li>
-                <li><i class="easydebuginfo-icon-contribute"></i> <a class="" href="">Contribute</a></li>
-                <li><i class="easydebuginfo-icon-donate"></i> <a class="" href="">Support Development</a></li>
+                <li><i class="easydebuginfo-icon-twitter"></i> <a href="https://twitter.com/DieserJonas">Send a Tweet</a></li>
+                <li><i class="easydebuginfo-icon-help"></i> <a href="#">Get Support</a></li>
+                <li><i class="easydebuginfo-icon-contribute"></i> <a href="https://github.com/JonasDoebertin/easy-debug-info">Contribute</a></li>
+                <li><i class="easydebuginfo-icon-donate"></i> <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V8PNBN3D3MRYU">Support Development</a></li>
             </ul>
         </div>
     </div>

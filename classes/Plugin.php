@@ -66,7 +66,7 @@ class Plugin {
 
 	public function addPluginActionLink($actionLinks)
     {
-		$html = '<a href="#" title="' . __('Generate a debug report', 'easydebuginfo') . '">' . __('Generate Report', 'easydebuginfo') . '</a>';
+		$html = '<a href="tools.php?page=easydebuginfo" title="' . __('Generate a debug report', 'easydebuginfo') . '">' . __('Generate Report', 'easydebuginfo') . '</a>';
 		array_unshift($actionLinks, $html);
 		return $actionLinks;
 	}

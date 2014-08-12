@@ -1,0 +1,114 @@
+{
+  "id": "f7835b1a",
+  "cfgVersion": 1,
+  "name": "easy-debug-info",
+  "files": {
+    "63110785": {
+      "id": "63110785",
+      "pid": "f7835b1a",
+      "name": "notices.scss",
+      "input": "assets/scss/notices.scss",
+      "customOutput": false,
+      "type": "Scss",
+      "config": {
+        "autoCompile": true,
+        "lineNumbers": false,
+        "unixNewlines": false,
+        "sourcemaps": false,
+        "debug": false,
+        "compass": false,
+        "fullCompass": false,
+        "outputStyle": "compact",
+        "autoprefixer": true
+      }
+    },
+    "8be57a14": {
+      "id": "8be57a14",
+      "pid": "f7835b1a",
+      "name": "easydebuginfo.scss",
+      "input": "assets/scss/easydebuginfo.scss",
+      "customOutput": false,
+      "type": "Scss",
+      "config": {
+        "autoCompile": true,
+        "lineNumbers": false,
+        "unixNewlines": false,
+        "sourcemaps": false,
+        "debug": false,
+        "compass": false,
+        "fullCompass": false,
+        "outputStyle": "compact",
+        "autoprefixer": true
+      }
+    },
+    "99f1a953": {
+      "id": "99f1a953",
+      "pid": "f7835b1a",
+      "name": "easydebuginfo.js",
+      "input": "assets/js/easydebuginfo.js",
+      "customOutput": false,
+      "type": "Js",
+      "config": {
+        "autoCompile": false,
+        "uglify": false,
+        "mangle": false,
+        "sourcemaps": false
+      }
+    }
+  },
+  "imports": {
+    "1d5697ae": {
+      "id": "1d5697ae",
+      "pid": "f7835b1a",
+      "path": "assets/scss/_mixins.scss",
+      "parents": [
+        "8be57a14",
+        "63110785"
+      ]
+    },
+    "9bf2dc2b": {
+      "id": "9bf2dc2b",
+      "pid": "f7835b1a",
+      "path": "assets/scss/_icons.scss",
+      "parents": [
+        "8be57a14",
+        "63110785"
+      ]
+    }
+  },
+  "images": {},
+  "config": {
+    "watch": true,
+    "liveRefresh": false,
+    "liveRefreshDelay": 0,
+    "filterPatterns": "*.md",
+    "useCustomServer": false,
+    "customServerUrl": "",
+    "cssPath": "css/",
+    "jsPath": "js/",
+    "htmlPath": "html/",
+    "minJsPath": "min/",
+    "htmlExtension": ".html",
+    "cssPathType": "REPLACE_TYPE",
+    "htmlPathType": "REPLACE_TYPE",
+    "jsPathType": "REPLACE_TYPE",
+    "minJsPathType": "RELATIVE_FILEDIR",
+    "htmlTypes": "jade, haml, slim, markdown, md",
+    "cssTypes": "less, sass, stylus, scss, styl",
+    "jsTypes": "coffee, coffeescript, coffeescripts, ls, livescript, livescripts",
+    "cssPreprocessorPath": "",
+    "htmlPreprocessorPath": "",
+    "jsPreprocessorPath": "",
+    "minJsPreprocessorPath": "",
+    "autoprefixerBrowsers": "",
+    "ftpHost": "",
+    "ftpPort": "21",
+    "ftpRemotePath": "",
+    "ftpIgnorePreprocessorFiles": true,
+    "ftpType": "FTP",
+    "ftpExcludePatterns": "",
+    "ftpSecure": false,
+    "ftpPassword": "",
+    "ftpUsername": ""
+  }
+}
