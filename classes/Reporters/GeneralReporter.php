@@ -5,13 +5,10 @@ use jdpowered\EasyDebugInfo\Contracts\Reporter;
 
 class GeneralReporter extends BaseReporter implements Reporter {
 
-    public function __construct()
-    {
-
-    }
-
     /**
      * Return the name of the reporter
+     *
+     * @since 1.0.0
      *
      * @return string
      */
@@ -23,6 +20,8 @@ class GeneralReporter extends BaseReporter implements Reporter {
     /**
      * Return the description of the reporter
      *
+     * @since 1.0.0
+     *
      * @return string
      */
     public function getDescription()
@@ -32,6 +31,8 @@ class GeneralReporter extends BaseReporter implements Reporter {
 
     /**
      * Do investigations and return report
+     *
+     * @since 1.0.0
      *
      * @return array
      */
@@ -43,9 +44,9 @@ class GeneralReporter extends BaseReporter implements Reporter {
     }
 
     /**
-     * Investigate all available plugins
+     * Investigate WordPress setup and generate report
      *
-     * Add a comprehensive list of all available plugins
+     * @since 1.0.0
      */
     protected function generalReport()
     {
@@ -79,6 +80,8 @@ class GeneralReporter extends BaseReporter implements Reporter {
     /**
      * Get various infos from the `get_bloginfo()` function
      *
+     * @since 1.0.0
+     *
      * @param  string $key
      * @return string
      */
@@ -92,6 +95,8 @@ class GeneralReporter extends BaseReporter implements Reporter {
      *
      * This is where the WordPress core files reside
      *
+     * @since 1.0.0
+     *
      * @return string
      */
     protected function getSiteUrl()
@@ -104,6 +109,8 @@ class GeneralReporter extends BaseReporter implements Reporter {
      *
      * This is the url the users sees when visiting the site
      *
+     * @since 1.0.0
+     *
      * @return string
      */
     protected function getHomeUrl()
@@ -113,6 +120,8 @@ class GeneralReporter extends BaseReporter implements Reporter {
 
     /**
      * Get the slug of the parent theme
+     *
+     * @since 1.0.0
      *
      * @return string
      */
@@ -124,6 +133,8 @@ class GeneralReporter extends BaseReporter implements Reporter {
     /**
      * Get the slug of the child theme
      *
+     * @since 1.0.0
+     *
      * @return string
      */
     protected function getChildTheme()
@@ -134,6 +145,8 @@ class GeneralReporter extends BaseReporter implements Reporter {
     /**
      * Checks whether the site uses a child theme or not
      *
+     * @since 1.0.0
+     *
      * @return bool
      */
     protected function isChildThemeInUse()
@@ -141,16 +154,37 @@ class GeneralReporter extends BaseReporter implements Reporter {
         return is_child_theme();
     }
 
+    /**
+     * Get the child themes directory url
+     *
+     * @since 1.0.0
+     *
+     * @return string
+     */
     protected function getChildThemeDirectoryUrl()
     {
         return esc_url(get_stylesheet_directory_uri());
     }
 
+    /**
+     * Get the parent themes directory url
+     *
+     * @since 1.0.0
+     *
+     * @return string
+     */
     protected function getParentThemeDirectoryUrl()
     {
         return esc_url(get_template_directory_uri());
     }
 
+    /**
+     * Get the theme directory url
+     *
+     * @since 1.0.0
+     *
+     * @return string
+     */
     protected function getThemeRootUrl()
     {
         return esc_url(get_theme_root_uri());
@@ -158,6 +192,8 @@ class GeneralReporter extends BaseReporter implements Reporter {
 
     /**
      * Checks if WordPress is running in RTL (right to left script) mode
+     *
+     * @since 1.0.0
      *
      * @return bool
      */

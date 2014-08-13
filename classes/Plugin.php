@@ -9,12 +9,18 @@ class Plugin {
     /**
      * The tools page slug
      *
+     * @since 1.0.0
+     *
      * @type string
      */
     protected $toolsPageSlug;
 
 	/**
 	 * Create an instance of the plugin
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return jdpowered\EasyDebugInfo\Plugin
 	 */
 	public function __construct()
     {
@@ -76,7 +82,7 @@ class Plugin {
 
 
     /**************************************************************************\
-    *                               OPTIONS PAGE                               *
+    *                                TOOLS PAGE                                *
     \**************************************************************************/
 
     /**
@@ -95,6 +101,14 @@ class Plugin {
         );
     }
 
+    /**
+     * Render the Easy Debug Info tools page
+     *
+     * This will fetch the latest report, create a human readble diff for its
+     * creation date and load the pages view.
+     *
+     * @since 1.0.0
+     */
     public function renderToolsPage()
     {
         $report = $this->getLatestReport();
@@ -175,6 +189,14 @@ class Plugin {
         return $report;
     }
 
+    /**
+     * Convert a report from an array to a string
+     *
+     * @since 1.0.0
+     *
+     * @param  array $report
+     * @return string
+     */
     protected function renderReport($report)
     {
         return implode("\n", $report);
@@ -189,9 +211,10 @@ class Plugin {
     \**************************************************************************/
 
 	/**
+	 * AJAX entrypoint for generating a full report
 	 *
-	 *
-	 * Will be run through an AJAX call in "wp_ajax_easydebuginfo_generate_report" action
+	 * @action wp_ajax_easydebuginfo_generate_report
+	 * @since 1.0.0
 	 */
 	public function ajaxGenerateReport()
     {
