@@ -70,6 +70,15 @@ class Plugin {
 		delete_option('easydebuginfo_latest_report');
 	}
 
+    /**
+     * Add a "Generate Report" plugin action link
+     *
+     * @action plugin_action_links_easy-debug-info
+     * @since 1.0.0
+     *
+     * @param  array $actionLinks
+     * @return array
+     */
 	public function addPluginActionLink($actionLinks)
     {
 		$html = '<a href="tools.php?page=easydebuginfo" title="' . __('Generate a debug report', 'easydebuginfo') . '">' . __('Generate Report', 'easydebuginfo') . '</a>';

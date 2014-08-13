@@ -34,6 +34,7 @@ class ReporterManager {
     {
         $this->registerReporter('jdpowered\EasyDebugInfo\Reporters\GeneralReporter');
         $this->registerReporter('jdpowered\EasyDebugInfo\Reporters\StatisticsReporter');
+        $this->registerReporter('jdpowered\EasyDebugInfo\Reporters\ThemesReporter');
         $this->registerReporter('jdpowered\EasyDebugInfo\Reporters\PluginsReporter');
     }
 
@@ -72,12 +73,22 @@ class ReporterManager {
     {
         $this->addDividerLine('bold');
         $this->addBlankLine();
-        $this->addHeadingLineWithVersion($reporter->getName(), $reporter->getVersion());
+        $this->addLine(mb_strtoupper($reporter->getName()));
+        $this->addLine(__('Provided by', 'easydebuginfo') . ' ' . $reporter->getProvider());
+        $this->addBlankLine();
+        $this->addLine($reporter->getDescription());
+
+        if( ! $reporter->isCoreReporter())
+        {
+            $this->addBlankLine();
+            $this->addLine(__('Version', 'easydebuginfo') . ' ' . $reporter->getVersion());
+        }
+
         $this->addBlankLine();
         $this->addDividerLine('normal');
         $this->addBlankLine();
         $this->mergeLines($reporter->report());
-        $this->addBlankLine(2);
+        $this->addBlankLine(3);
     }
 
     /**
@@ -87,10 +98,10 @@ class ReporterManager {
      */
     protected function addIntroduction()
     {
-        $this->addLine('EASY DEBUG INFO REPORT');
+        $this->addLine(mb_strtoupper(__('Easy Debug Info Report', 'easydebuginfo')));
         $this->addBlankLine();
-        $this->addLabeledLine('Version', JD_EASYDEBUGINFO_VERSION, 4);
-        $this->addLabeledLine('Created at', date('r'));
+        $this->addLabeledLine('Plugin Version', JD_EASYDEBUGINFO_VERSION);
+        $this->addLabeledLine('Report Creation', date('r'));
         $this->addBlankLine(3);
     }
 
