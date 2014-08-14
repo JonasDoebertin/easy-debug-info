@@ -1,0 +1,150 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Easy Debug Info 1.0.0\n"
+"POT-Creation-Date: 2014-08-14 09:50+0100\n"
+"PO-Revision-Date: 2014-08-14 09:58+0100\n"
+"Last-Translator: Jonas Döbertin <hallo@jonasdoebertin.net>\n"
+"Language-Team: Jonas Döbertin <hello@jd-powered.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.7\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_ex:1,2c;"
+"esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"Language: de_DE\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../classes/Plugin.php:86
+msgid "Generate a debug report"
+msgstr "Einen Debug-Report erstellen"
+
+#: ../classes/Plugin.php:86 ../views/tools-page/tools-page.php:18
+msgid "Generate Report"
+msgstr "Report Erstellen"
+
+#: ../classes/Plugin.php:107 ../classes/Plugin.php:108
+#: ../classes/Reporters/BaseReporter.php:36 ../views/notices/legacy.php:6
+#: ../views/tools-page/tools-page.php:2
+msgid "Easy Debug Info"
+msgstr "Easy Debug Info"
+
+#: ../classes/Plugin.php:240
+msgid "Security check failed. Please try again!"
+msgstr "Sicherheitsüberprüfung fehlgeschlagen. Bitte versuche es erneut!"
+
+#: ../classes/Plugin.php:256 ../views/tools-page/tools-page.php:60
+msgid "No report generated, yet!"
+msgstr "Es wurde bislang kein Report erstellt!"
+
+#: ../classes/Reporters/GeneralReporter.php:17
+msgid "General Information"
+msgstr ""
+
+#: ../classes/Reporters/GeneralReporter.php:29
+msgid "Some basic information about the WordPress setup"
+msgstr ""
+
+#: ../classes/Reporters/PluginsReporter.php:37
+msgid "Plugins"
+msgstr ""
+
+#: ../classes/Reporters/PluginsReporter.php:47
+msgid "A detailed list of all available plugins, their version and statuses"
+msgstr ""
+
+#: ../classes/Reporters/StatisticsReporter.php:15
+msgid "Statistics"
+msgstr ""
+
+#: ../classes/Reporters/StatisticsReporter.php:25
+msgid ""
+"Various statistics, includeing the number of posts, pages, comments, users, "
+"etc."
+msgstr ""
+
+#: ../classes/Reporters/ThemesReporter.php:40
+msgid "Themes"
+msgstr ""
+
+#: ../classes/Reporters/ThemesReporter.php:50
+msgid "A detailed list of all available themes"
+msgstr ""
+
+#: ../views/notices/legacy.php:9
+#, php-format
+msgid ""
+"Easy Debug Info requires <strong>PHP 5.3.0</strong> or newer. You are "
+"currently using PHP %s. Why don't you try contacting your hosting provider "
+"and ask for an upgrade?"
+msgstr ""
+"Easy Debug Info benötigt <strong>PHP 5.3.0</strong> oder neuer. Du "
+"verwendest aktuell PHP %s. Wie wäre es, wenn du deinen Host kontaktierst und "
+"um ein Upgrade bittest?"
+
+#: ../views/tools-page/tools-page.php:5
+msgid "Welcome To Easy Debug Info"
+msgstr "Willkommen zu Easy Debug Report"
+
+#: ../views/tools-page/tools-page.php:6
+msgid "Making collecting debug info easy"
+msgstr "Einfach Debug-Informationen sammeln"
+
+#: ../views/tools-page/tools-page.php:9
+msgid "What is this"
+msgstr "Worum geht's?"
+
+#: ../views/tools-page/tools-page.php:10
+msgid ""
+"Easy Debug Info makes in incredibly easy to collect various debug infos and "
+"statistics from your WordPress powered site. This includes, but is not "
+"limited to, various data point from your server environment, details about "
+"your WordPress installation and it's themes and plugins, database "
+"statistics, and much more. Extending the reports from your own plugins is "
+"easy, too!"
+msgstr ""
+
+#: ../views/tools-page/tools-page.php:14
+msgid "Tools"
+msgstr "Tools"
+
+#: ../views/tools-page/tools-page.php:22
+msgid "Download Latest Report"
+msgstr "Letzten Report herunterladen"
+
+#: ../views/tools-page/tools-page.php:28
+msgid "Further Help"
+msgstr "Weitere Hilfe"
+
+#: ../views/tools-page/tools-page.php:32
+msgid "Send a Tweet"
+msgstr "Schreibe einen Tweet"
+
+#: ../views/tools-page/tools-page.php:36
+msgid "Get Support"
+msgstr "Support bekommen"
+
+#: ../views/tools-page/tools-page.php:40
+msgid "Contribute"
+msgstr "Beitragen"
+
+#: ../views/tools-page/tools-page.php:44
+msgid "Support Development"
+msgstr "Unterstütze die Entwicklung"
+
+#: ../views/tools-page/tools-page.php:52
+msgid "Please note"
+msgstr "Bitte beachten"
+
+#: ../views/tools-page/tools-page.php:52
+#, php-format
+msgid ""
+"The following report has been generated %s and is shown only for reference. "
+"You probably want to generate a new one!"
+msgstr ""
+"Der folgende Report wurde %s erzeugt und wird nur zur Übersicht angezeigt. "
+"Du solltest einen neuen erstellen!"
