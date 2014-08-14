@@ -38,6 +38,10 @@ class ReporterManager {
         $this->registerReporter('jdpowered\EasyDebugInfo\Reporters\PluginsReporter');
     }
 
+
+
+
+
     /**************************************************************************\
     *                                  REPORT                                  *
     \**************************************************************************/
@@ -105,6 +109,10 @@ class ReporterManager {
         $this->addBlankLine(3);
     }
 
+
+
+
+
     /**************************************************************************\
     *                           REPORTER MANAGEMENT                            *
     \**************************************************************************/
@@ -139,6 +147,10 @@ class ReporterManager {
         $interfaces = class_implements($classname);
         return in_array('jdpowered\EasyDebugInfo\Contracts\Reporter', $interfaces);
     }
+
+
+
+
 
     /**************************************************************************\
     *                               LINE HELPERS                               *
