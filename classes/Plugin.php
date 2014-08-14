@@ -38,6 +38,8 @@ class Plugin {
 
 		/* Register custom actions for ajax */
 		add_action('wp_ajax_easydebuginfo_generate_report', array($this, 'ajaxGenerateReport'));
+
+        add_action('admin_post_easydebuginfo_download_report', array($this, 'downloadReport'));
 	}
 
 
@@ -120,10 +122,20 @@ class Plugin {
      */
     public function renderToolsPage()
     {
+        /*
+            Fetch latest report and prepare it for rendering
+         */
         $report = $this->getLatestReport();
-
         if(is_array($report))
             $report['created_at'] = Carbon::createFromTimestamp($report['created_at'])->diffForHumans();
+
+        /*
+            Prepare "Download Latest Report" link target
+         */
+        $downloadReportLink = add_query_arg(array(
+            'action' => 'easydebuginfo_download_report',
+            'nonce'  => wp_create_nonce('easydebuginfo_download_report'),
+        ), admin_url('admin-post.php'));
 
         include JD_EASYDEBUGINFO_PATH . '/views/tools-page/tools-page.php';
     }
@@ -209,6 +221,78 @@ class Plugin {
     protected function renderReport($report)
     {
         return implode("\n", $report);
+    }
+
+    /**
+     * admin-post.php entrypoint for downloading a full report as text file
+     *
+     * @action admin_post_easydebuginfo_download_report
+     * @since 1.0.0
+     */
+    public function downloadReport()
+    {
+        /*
+            Security check
+         */
+        $nonce = (isset($_REQUEST['nonce'])) ? $_REQUEST['nonce'] : '';
+        if( ! wp_verify_nonce($nonce, 'easydebuginfo_download_report'))
+        {
+            wp_die(__('Security check failed. Please try again!', 'easydebuginfo'));
+        }
+
+        /*
+            Fetch the latest report,
+            render it and
+            create the filename for the download accordingly
+         */
+        $report = $this->getLatestReport();
+        if(is_array($report))
+        {
+            $response = $this->renderReport($report['report']);
+            $filename = 'Report ' . Carbon::createFromTimestamp($report['created_at'])->format('Y-m-d G-i-s T');
+        }
+        else
+        {
+            $response = __('No report generated, yet!', 'easydebuginfo');
+            $filename = 'no-reports';
+        }
+
+        /*
+            Send out some headers to prevent caching of the report
+         */
+        $this->sendNoCacheHeaders();
+
+        /*
+            Send the actual file download headers and content
+         */
+        header('Content-Disposition: attachment; filename=' . $filename . '.txt', true, 200);
+        header('Content-Type: text/plain');
+        header('Content-Length: '. strlen($response));
+        header('Content-Transfer-Encoding: binary');
+        echo $response;
+
+        die;
+    }
+
+
+
+
+    
+    /**************************************************************************\
+    *                                   HTTP                                   *
+    \**************************************************************************/
+
+    /**
+     * Sends out some headers to prevent provider and client side caching
+     *
+     * @since 1.0.0
+     */
+    protected function sendNoCacheHeaders()
+    {
+        header('Last-Modified: ' . gmdate("D, d M Y H:i:s") . ' GMT');
+        header('Cache-Control: max-age=0, no-cache, no-store');
+        header('Cache-Control: post-check=0, pre-check=0', false);
+        header('Pragma: no-cache');
     }
 
 

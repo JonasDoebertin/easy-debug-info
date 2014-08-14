@@ -35,8 +35,6 @@ jQuery(function($)
 
 			/* Show message */
             reportHolder.hide().text(response).slideDown('slow');
-
-			//alert(response);
 		});
 
 	});

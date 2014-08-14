@@ -14,6 +14,7 @@
             <h3>Tools</h3>
             <ul>
                 <li><i class="easydebuginfo-icon-report"></i> <a class="js-easydebuginfo-generate-report" href="#">Generate Report</a></li>
+                <li><i class="easydebuginfo-icon-download"></i> <a class="js-easydebuginfo-download-report" href="<?php echo $downloadReportLink ?>">Download Latest Report</a></li>
             </ul>
         </div>
 

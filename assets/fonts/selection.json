@@ -21,12 +21,35 @@
 				"order": 7,
 				"id": 0,
 				"prevSize": 32,
-				"code": 58886,
+				"code": 58880,
 				"name": "logo",
 				"ligatures": ""
 			},
 			"setIdx": 0,
 			"iconIdx": 0
+		},
+		{
+			"icon": {
+				"paths": [
+					"M0 822.857v-182.857q0-22.857 16-38.857t38.857-16h265.714l77.143 77.714q33.143 32 77.714 32t77.714-32l77.714-77.714h265.143q22.857 0 38.857 16t16 38.857v182.857q0 22.857-16 38.857t-38.857 16h-841.143q-22.857 0-38.857-16t-16-38.857zM185.714 314.857q9.714-22.286 33.714-22.286h146.286v-256q0-14.857 10.857-25.714t25.714-10.857h146.286q14.857 0 25.714 10.857t10.857 25.714v256h146.286q24 0 33.714 22.286 9.714 23.429-8 40l-256 256q-10.286 10.857-25.714 10.857t-25.714-10.857l-256-256q-17.714-16.571-8-40zM658.286 768q0 14.857 10.857 25.714t25.714 10.857 25.714-10.857 10.857-25.714-10.857-25.714-25.714-10.857-25.714 10.857-10.857 25.714zM804.571 768q0 14.857 10.857 25.714t25.714 10.857 25.714-10.857 10.857-25.714-10.857-25.714-25.714-10.857-25.714 10.857-10.857 25.714z"
+				],
+				"width": 951,
+				"tags": [
+					"download"
+				],
+				"defaultCode": 61465,
+				"grid": 14
+			},
+			"properties": {
+				"id": 24,
+				"order": 8,
+				"prevSize": 28,
+				"code": 58881,
+				"name": "download",
+				"ligatures": ""
+			},
+			"setIdx": 1,
+			"iconIdx": 24
 		},
 		{
 			"icon": {
@@ -43,7 +66,7 @@
 				"id": 80,
 				"order": 4,
 				"prevSize": 28,
-				"code": 58880,
+				"code": 58882,
 				"name": "contribute",
 				"ligatures": ""
 			},
@@ -65,7 +88,7 @@
 				"id": 84,
 				"order": 3,
 				"prevSize": 28,
-				"code": 58881,
+				"code": 58883,
 				"name": "help",
 				"ligatures": ""
 			},
@@ -88,7 +111,7 @@
 				"id": 144,
 				"order": 2,
 				"prevSize": 28,
-				"code": 58882,
+				"code": 58884,
 				"name": "twitter",
 				"ligatures": ""
 			},
@@ -111,7 +134,7 @@
 				"id": 189,
 				"order": 5,
 				"prevSize": 28,
-				"code": 58883,
+				"code": 58885,
 				"name": "donate",
 				"ligatures": ""
 			},
@@ -133,7 +156,7 @@
 				"id": 313,
 				"order": 1,
 				"prevSize": 28,
-				"code": 58884,
+				"code": 58886,
 				"name": "report",
 				"ligatures": ""
 			},
@@ -158,7 +181,7 @@
 				"id": 123,
 				"order": 6,
 				"prevSize": 32,
-				"code": 58885,
+				"code": 58887,
 				"name": "spinner",
 				"ligatures": ""
 			},
@@ -168,13 +191,13 @@
 	],
 	"height": 1024,
 	"metadata": {
-		"name": "icons"
+		"name": "easydebuginfoicons"
 	},
 	"preferences": {
 		"fontPref": {
-			"prefix": "icon-",
+			"prefix": "easydebuginfo-icon-",
 			"metadata": {
-				"fontFamily": "icons",
+				"fontFamily": "easydebuginfoicons",
 				"majorVersion": 1,
 				"minorVersion": 0
 			},
