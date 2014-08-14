@@ -12,7 +12,11 @@ Making collecting extensive and extendable debug info finally easy.
 
 == Description ==
 
-This is the description.
+Easy Debug Info makes it incredibly easy to collect various debug infos and statistics from your WordPress powered site.
+
+This includes, but is not limited to, various data points from your server environment, details about your WordPress installation and it's themes and plugins, database statistics, and much more. Extending the reports from your own plugins is easy, too!
+
+This first version includes some basic reports. The database and server environment report parts are currently in the making and will ship with future versions.
 
 == Installation ==
 
