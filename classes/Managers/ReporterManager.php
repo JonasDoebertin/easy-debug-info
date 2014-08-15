@@ -33,6 +33,8 @@ class ReporterManager {
     public function __construct()
     {
         $this->registerReporter('jdpowered\EasyDebugInfo\Reporters\GeneralReporter');
+        $this->registerReporter('jdpowered\EasyDebugInfo\Reporters\EnvironmentReporter');
+        $this->registerReporter('jdpowered\EasyDebugInfo\Reporters\DatabaseReporter');
         $this->registerReporter('jdpowered\EasyDebugInfo\Reporters\StatisticsReporter');
         $this->registerReporter('jdpowered\EasyDebugInfo\Reporters\ThemesReporter');
         $this->registerReporter('jdpowered\EasyDebugInfo\Reporters\PluginsReporter');
@@ -90,7 +92,6 @@ class ReporterManager {
 
         $this->addBlankLine();
         $this->addDividerLine('normal');
-        $this->addBlankLine();
         $this->mergeLines($reporter->report());
         $this->addBlankLine(3);
     }

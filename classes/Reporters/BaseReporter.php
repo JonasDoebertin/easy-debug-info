@@ -1,6 +1,8 @@
 <?php
 namespace jdpowered\EasyDebugInfo\Reporters;
 
+use jdpowered\EasyDebugInfo\Tools\ConsoleTable;
+
 abstract class BaseReporter {
 
     /**
@@ -117,6 +119,33 @@ abstract class BaseReporter {
     }
 
     /**
+     * Add a new line representing a constants value and include a label
+     *
+     * The labels width may be padded to a specific amount
+     *
+     * @since 1.1.0
+     * @see addLabeledLine()
+     *
+     * @param bool   $constant  The constants name as string
+     * @param int    $padding = 20
+     */
+    protected function addLabeledConstantLine($constant, $padding = 20)
+    {
+        /*
+            Get constant value, if defined
+         */
+        $content = (defined($constant)) ? constant($constant) : 'undefined';
+
+        /*
+            Convert booleans to their string representation
+         */
+        if(is_bool($content))
+            $content = ($content == true) ? 'true' : 'false';
+
+        $this->addLabeledLine($constant, $content, $padding);
+    }
+
+    /**
      * Add a heading line
      *
      * @since 1.0.0
@@ -125,7 +154,9 @@ abstract class BaseReporter {
      */
     protected function addHeadingLine($heading)
     {
+        $this->addBlankLine();
         $this->lines[] = "[{$heading}]";
+        $this->addBlankLine();
     }
 
     /**
@@ -184,6 +215,34 @@ abstract class BaseReporter {
     protected function pad($input, $length, $char)
     {
         return str_pad($input, $length, $char, STR_PAD_RIGHT);
+    }
+
+    protected function prepareTable($headers, $alignments)
+    {
+        $table = new ConsoleTable(
+            \CONSOLE_TABLE_ALIGN_LEFT,
+            \CONSOLE_TABLE_BORDER_ASCII,
+            2,
+            null,
+            false
+        );
+
+        $table->setBorderVisibility(array(
+            'top'    => false,
+            'right'  => false,
+            'bottom' => false,
+            'left'   => false,
+            'inner'  => true,
+        ));
+
+        $table->setHeaders($headers);
+
+        for($i = 0; $i < count($alignments); $i++)
+        {
+            $table->setAlign($i, $alignments[$i]);
+        }
+
+        return $table;
     }
 
 }
