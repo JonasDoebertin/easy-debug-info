@@ -74,7 +74,7 @@ class DatabaseReporter extends BaseReporter implements Reporter {
      */
     public function getName()
     {
-        return __('Database', 'easydebuginfo');
+        return 'Database';
     }
 
     /**
@@ -100,7 +100,6 @@ class DatabaseReporter extends BaseReporter implements Reporter {
     {
         $this->generalReport();
         $this->tablesReport();
-
         return $this->lines;
     }
 
@@ -330,7 +329,7 @@ class DatabaseReporter extends BaseReporter implements Reporter {
      * Calculate and format the total size of a table
      *
      * @since 1.1.0
-     * 
+     *
      * @param  string $table
      * @return string
      */
