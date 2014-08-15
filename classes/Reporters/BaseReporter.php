@@ -1,6 +1,8 @@
 <?php
 namespace jdpowered\EasyDebugInfo\Reporters;
 
+use jdpowered\EasyDebugInfo\Tools\ConsoleTable;
+
 abstract class BaseReporter {
 
     /**
@@ -213,6 +215,34 @@ abstract class BaseReporter {
     protected function pad($input, $length, $char)
     {
         return str_pad($input, $length, $char, STR_PAD_RIGHT);
+    }
+
+    protected function prepareTable($headers, $alignments)
+    {
+        $table = new ConsoleTable(
+            \CONSOLE_TABLE_ALIGN_LEFT,
+            \CONSOLE_TABLE_BORDER_ASCII,
+            2,
+            null,
+            false
+        );
+
+        $table->setBorderVisibility(array(
+            'top'    => false,
+            'right'  => false,
+            'bottom' => false,
+            'left'   => false,
+            'inner'  => true,
+        ));
+
+        $table->setHeaders($headers);
+
+        for($i = 0; $i < count($alignments); $i++)
+        {
+            $table->setAlign($i, $alignments[$i]);
+        }
+
+        return $table;
     }
 
 }
