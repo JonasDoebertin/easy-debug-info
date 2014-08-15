@@ -14,7 +14,7 @@ class GeneralReporter extends BaseReporter implements Reporter {
      */
     public function getName()
     {
-        return __('General Information', 'easydebuginfo');
+        return 'General Information';
     }
 
     /**
@@ -40,7 +40,6 @@ class GeneralReporter extends BaseReporter implements Reporter {
     {
         $this->generalReport();
         $this->constantsReport();
-
         return $this->lines;
     }
 

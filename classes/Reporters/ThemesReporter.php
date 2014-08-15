@@ -37,7 +37,7 @@ class ThemesReporter extends BaseReporter implements Reporter {
      */
     public function getName()
     {
-        return __('Themes', 'easydebuginfo');
+        return 'Themes';
     }
 
     /**
@@ -59,7 +59,6 @@ class ThemesReporter extends BaseReporter implements Reporter {
     {
         $this->metaReport();
         $this->themesListReport();
-
         return $this->lines;
     }
 
@@ -80,19 +79,16 @@ class ThemesReporter extends BaseReporter implements Reporter {
     {
         foreach($this->themes as $theme)
         {
-            $this->addBlankLine();
             $this->addHeadingLine($theme->Name);
             $this->addLabeledLine('Version', $theme->get('Version'));
             $this->addLabeledLine('Author', $theme->get('Author'));
             $this->addLabeledLine('Website', $theme->get('ThemeURI'));
             $this->addLabeledLine('Textdomain', $theme->get('TextDomain'));
-
             $this->addLabeledLine('Theme Slug', $theme->get_stylesheet());
             $this->addLabeledLine('Theme Directory', $theme->get_stylesheet_directory());
             $this->addLabeledLine('Theme URL', $theme->get_stylesheet_directory_uri());
 
             $this->addLabeledBooleanLine('Child Theme', $this->isChildTheme($theme));
-
             if($this->isChildTheme($theme))
             {
                 $this->addLabeledLine('Parent Theme', $theme->get('Template'));
@@ -100,11 +96,27 @@ class ThemesReporter extends BaseReporter implements Reporter {
         }
     }
 
+    /**
+     * Return theme root directory
+     *
+     * @since 1.0.0
+     * @see \get_theme_root()
+     *
+     * @return string
+     */
     protected function getThemeRootDirectory()
     {
         return get_theme_root();
     }
 
+    /**
+     * Return theme root directory uri
+     *
+     * @since 1.0.0
+     * @see \get_theme_root_uri()
+     *
+     * @return string
+     */
     protected function getThemeRootDirectoryUrl()
     {
         return get_theme_root_uri();

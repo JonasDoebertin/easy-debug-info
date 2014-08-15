@@ -90,7 +90,6 @@ class ReporterManager {
 
         $this->addBlankLine();
         $this->addDividerLine('normal');
-        $this->addBlankLine();
         $this->mergeLines($reporter->report());
         $this->addBlankLine(3);
     }

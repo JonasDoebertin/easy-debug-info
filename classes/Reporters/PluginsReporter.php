@@ -34,7 +34,7 @@ class PluginsReporter extends BaseReporter implements Reporter {
      */
     public function getName()
     {
-        return __('Plugins', 'easydebuginfo');
+        return 'Plugins';
     }
 
     /**
@@ -55,7 +55,6 @@ class PluginsReporter extends BaseReporter implements Reporter {
     public function report()
     {
         $this->pluginsReport();
-
         return $this->lines;
     }
 
@@ -73,7 +72,6 @@ class PluginsReporter extends BaseReporter implements Reporter {
             $this->addLabeledLine('Basefile', $plugin);
             $this->addLabeledBooleanLine('Activated', $this->isActivePlugin($plugin));
             $this->addLabeledLine('Plugin URI', $info['pluginuri']);
-            $this->addBlankLine();
         }
     }
 

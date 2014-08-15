@@ -12,7 +12,7 @@ class StatisticsReporter extends BaseReporter implements Reporter {
      */
     public function getName()
     {
-        return __('Statistics', 'easydebuginfo');
+        return 'Statistics';
     }
 
     /**
@@ -38,7 +38,6 @@ class StatisticsReporter extends BaseReporter implements Reporter {
         $this->categoriesReport();
         $this->tagsReport();
         $this->usersReport();
-
         return $this->lines;
     }
 
@@ -64,7 +63,6 @@ class StatisticsReporter extends BaseReporter implements Reporter {
      */
     protected function pagesReport()
     {
-        $this->addBlankLine();
         $this->addHeadingLine('Pages');
         $this->addLabeledLine('Published', $this->getPagesCount('publish'));
         $this->addLabeledLine('Planned', $this->getPagesCount('future'));
@@ -80,7 +78,6 @@ class StatisticsReporter extends BaseReporter implements Reporter {
      */
     protected function commentsReport()
     {
-        $this->addBlankLine();
         $this->addHeadingLine('Comments');
         $this->addLabeledLine('Approved', $this->getCommentsCount('approved'));
         $this->addLabeledLine('In Moderation', $this->getCommentsCount('moderated'));
@@ -96,7 +93,6 @@ class StatisticsReporter extends BaseReporter implements Reporter {
      */
     protected function categoriesReport()
     {
-        $this->addBlankLine();
         $this->addHeadingLine('Categories');
         $this->addLabeledLine('Total', $this->getCategoryCount());
     }
@@ -108,7 +104,6 @@ class StatisticsReporter extends BaseReporter implements Reporter {
      */
     protected function tagsReport()
     {
-        $this->addBlankLine();
         $this->addHeadingLine('Tags');
         $this->addLabeledLine('Total', $this->getTagCount());
     }
@@ -121,7 +116,6 @@ class StatisticsReporter extends BaseReporter implements Reporter {
     protected function usersReport()
     {
         /* TODO: Handle custom user roles */
-        $this->addBlankLine();
         $this->addHeadingLine('Users');
         $this->addLabeledLine('Administrators', $this->getUserCount('administrator'));
         $this->addLabeledLine('Editors', $this->getUserCount('editor'));
