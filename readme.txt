@@ -3,7 +3,7 @@ Contributors: JonasDoebertin
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V8PNBN3D3MRYU
 Tags: Debug, Debugging, Statistics, Constants, Database, Plugins, Themes
 Requires at least: 3.7.0
-Tested up to: 3.9
+Tested up to: 3.9.2
 Stable tag: 1.1.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -37,6 +37,13 @@ None, yet...
 2. Showing a previously generated report.
 
 == Changelog ==
+
+= 1.1.0 =
+
+**Enhancements**
+
+* Added Environment & Database reports
+* Extended General report  to include WordPress specific constants
 
 = 1.0.0 =
 This is the first stable release for internal use.
