@@ -117,6 +117,33 @@ abstract class BaseReporter {
     }
 
     /**
+     * Add a new line representing a constants value and include a label
+     *
+     * The labels width may be padded to a specific amount
+     *
+     * @since 1.1.0
+     * @see addLabeledLine()
+     *
+     * @param bool   $constant  The constants name as string
+     * @param int    $padding = 20
+     */
+    protected function addLabeledConstantLine($constant, $padding = 20)
+    {
+        /*
+            Get constant value, if defined
+         */
+        $content = (defined($constant)) ? constant($constant) : 'undefined';
+
+        /*
+            Convert booleans to their string representation
+         */
+        if(is_bool($content))
+            $content = ($content == true) ? 'true' : 'false';
+
+        $this->addLabeledLine($constant, $content, $padding);
+    }
+
+    /**
      * Add a heading line
      *
      * @since 1.0.0
@@ -125,7 +152,9 @@ abstract class BaseReporter {
      */
     protected function addHeadingLine($heading)
     {
+        $this->addBlankLine();
         $this->lines[] = "[{$heading}]";
+        $this->addBlankLine();
     }
 
     /**

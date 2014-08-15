@@ -39,6 +39,7 @@ class GeneralReporter extends BaseReporter implements Reporter {
     public function report()
     {
         $this->generalReport();
+        $this->constantsReport();
 
         return $this->lines;
     }
@@ -61,11 +62,11 @@ class GeneralReporter extends BaseReporter implements Reporter {
         $this->addLabeledBooleanLine('RTL', $this->isRtl());
         $this->addLabeledLine('WordPress URL', $this->getSiteUrl());
         $this->addLabeledLine('Site URL', $this->getHomeUrl());
+        $this->addLabeledLine('Base Directory', ABSPATH);
 
         /*
             Active Theme
          */
-        $this->addBlankLine();
         $this->addHeadingLine('Active Theme');
         $this->addLabeledLine('Theme', $this->getParentTheme());
         $this->addLabeledLine('Theme Directory', $this->getParentThemeDirectoryUrl());
@@ -74,6 +75,24 @@ class GeneralReporter extends BaseReporter implements Reporter {
         {
             $this->addLabeledLine('Child Theme', $this->getChildTheme());
             $this->addLabeledLine('Child Theme Directory', $this->getChildThemeDirectoryUrl());
+        }
+    }
+
+    /**
+     * Investigate WordPress core constants
+     *
+     * @since 1.1.0
+     */
+    protected function constantsReport()
+    {
+        $this->addHeadingLine('Constants');
+
+        /*
+            Add all relevant constants with their values
+         */
+        foreach($this->getWordPressConstants() as $constant)
+        {
+            $this->addLabeledConstantLine($constant, 30);
         }
     }
 
@@ -200,6 +219,77 @@ class GeneralReporter extends BaseReporter implements Reporter {
     protected function isRtl()
     {
         return is_rtl();
+    }
+
+    /**
+     * Return a list of all WordPress core constants
+     *
+     * @since 1.1.0
+     *
+     * @return array
+     */
+    protected function getWordpressConstants()
+    {
+        return array(
+            'ABSPATH',
+            'WP_SITEURL',
+            'WP_HOME',
+            'WP_CONTENT_DIR',
+            'WP_CONTENT_URL',
+            'WP_PLUGIN_DIR',
+            'WP_PLUGIN_URL',
+            'PLUGINDIR',
+            'UPLOADS',
+            'AUTOSAVE_INTERVAL',
+            'WP_POST_REVISIONS',
+            'COOKIE_DOMAIN',
+            'WP_ALLOW_MULTISITE',
+            'NOBLOGREDIRECT',
+            'WP_DEBUG',
+            'WP_DEBUG_LOG',
+            'WP_DEBUG_DISPLAY',
+            'SCRIPT_DEBUG',
+            'SAVEQUERIES',
+            'CONCATENATE_SCRIPTS',
+            'WP_DEBUG_DISPLAY',
+            'WP_MEMORY_LIMIT',
+            'WP_MAX_MEMORY_LIMIT',
+            'WP_CACHE',
+            'CUSTOM_USER_TABLE',
+            'CUSTOM_USER_META_TABLE',
+            'WPLANG',
+            'WP_LANG_DIR',
+            'FS_CHMOD_DIR',
+            'FS_CHMOD_FILE',
+            'FS_METHOD',
+            'FTP_BASE',
+            'FTP_CONTENT_DIR',
+            'FTP_PLUGIN_DIR',
+            'FTP_PUBKEY',
+            'FTP_PRIKEY',
+            'FTP_HOST',
+            'FTP_SSL',
+            'ALTERNATE_WP_CRON',
+            'DISABLE_WP_CRON',
+            'WP_CRON_LOCK_TIMEOUT',
+            'COOKIEPATH',
+            'SITECOOKIEPATH',
+            'ADMIN_COOKIE_PATH',
+            'PLUGINS_COOKIE_PATH',
+            'TEMPLATEPATH',
+            'STYLESHEETPATH',
+            'EMPTY_TRASH_DAYS',
+            'WP_ALLOW_REPAIR',
+            'DO_NOT_UPGRADE_GLOBAL_TABLES',
+            'DISALLOW_FILE_EDIT',
+            'DISALLOW_FILE_MODS',
+            'FORCE_SSL_LOGIN',
+            'FORCE_SSL_ADMIN',
+            'WP_HTTP_BLOCK_EXTERNAL',
+            'WP_ACCESSIBLE_HOSTS',
+            'AUTOMATIC_UPDATER_DISABLED',
+            'WP_AUTO_UPDATE_CORE',
+        );
     }
 
 }
