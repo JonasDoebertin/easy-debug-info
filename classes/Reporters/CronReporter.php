@@ -51,7 +51,7 @@ class CronReporter extends BaseReporter implements Reporter {
      */
     protected function intervalsReport()
     {
-        $this->addBlankLine();
+        $this->addHeadingLine('Registered Intervals');
 
         /*
             Prepare the table by adding headers
@@ -97,7 +97,7 @@ class CronReporter extends BaseReporter implements Reporter {
      */
     protected function eventsReport()
     {
-        $this->addBlankLine();
+        $this->addHeadingLine('Scheduled Events');
 
         /*
             Prepare the table by adding headers
