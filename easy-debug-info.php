@@ -5,7 +5,7 @@
 	Plugin Name:   Easy Debug Info
 	Plugin URI:    http://wordpress.org/plugins/easy-debug-info/
 	Description:   Making collecting extensive and extendable debug info finally easy
-	Version:       1.1.0
+	Version:       1.2.0
 	Author:        Jonas Döbertin
 	Author URI:    http://jd-powered.net
  */
@@ -38,7 +38,7 @@ define('JD_EASYDEBUGINFO_BASENAME',  plugin_basename(__FILE__));
 define('JD_EASYDEBUGINFO_MAINFILE',  __FILE__);
 define('JD_EASYDEBUGINFO_PATH',     plugin_dir_path(__FILE__));
 define('JD_EASYDEBUGINFO_URL',      plugins_url('', __FILE__));
-define('JD_EASYDEBUGINFO_VERSION',  '1.1.0');
+define('JD_EASYDEBUGINFO_VERSION',  '1.2.0');
 
 
 /*
