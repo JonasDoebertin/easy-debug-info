@@ -15,8 +15,8 @@
     "require": {
         "php": ">=5.3.0",
         "nesbot/Carbon": "1.*",
-        "rych/bytesize": "1.0.*",
-        "pear/console_table": "1.2.*"
+        "rych/bytesize": "1.*",
+        "pear/console_table": "1.*"
     },
     "autoload": {
         "psr-4": {
