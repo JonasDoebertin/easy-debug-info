@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Easy Debug Info 1.0.0\n"
-"POT-Creation-Date: 2014-08-14 09:50+0100\n"
-"PO-Revision-Date: 2014-08-14 09:51+0100\n"
+"POT-Creation-Date: 2014-09-25 15:01+0100\n"
+"PO-Revision-Date: 2014-09-25 15:02+0100\n"
 "Last-Translator: Jonas Döbertin <hallo@jonasdoebertin.net>\n"
 "Language-Team: Jonas Döbertin <hello@jd-powered.net>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.7\n"
+"X-Generator: Poedit 1.6.9\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -19,56 +19,52 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: ..\n"
 
-#: ../classes/Plugin.php:86
+#: ../classes/Plugin.php:96
 msgid "Generate a debug report"
 msgstr ""
 
-#: ../classes/Plugin.php:86 ../views/tools-page/tools-page.php:18
+#: ../classes/Plugin.php:96 ../views/tools-page/tools-page.php:18
 msgid "Generate Report"
 msgstr ""
 
-#: ../classes/Plugin.php:107 ../classes/Plugin.php:108
-#: ../classes/Reporters/BaseReporter.php:36 ../views/notices/legacy.php:6
+#: ../classes/Plugin.php:117 ../classes/Plugin.php:118
+#: ../classes/Reporters/BaseReporter.php:38 ../views/notices/legacy.php:6
 #: ../views/tools-page/tools-page.php:2
 msgid "Easy Debug Info"
 msgstr ""
 
-#: ../classes/Plugin.php:240
+#: ../classes/Plugin.php:250
 msgid "Security check failed. Please try again!"
 msgstr ""
 
-#: ../classes/Plugin.php:256 ../views/tools-page/tools-page.php:60
+#: ../classes/Plugin.php:266 ../views/tools-page/tools-page.php:60
 msgid "No report generated, yet!"
 msgstr ""
 
-#: ../classes/Reporters/GeneralReporter.php:17
-msgid "General Information"
+#: ../classes/Reporters/CronReporter.php:30
+msgid "A list of scheduled events."
+msgstr ""
+
+#: ../classes/Reporters/DatabaseReporter.php:89
+msgid "Everything about the database"
+msgstr ""
+
+#: ../classes/Reporters/EnvironmentReporter.php:30
+msgid "Everything about the server software"
 msgstr ""
 
 #: ../classes/Reporters/GeneralReporter.php:29
 msgid "Some basic information about the WordPress setup"
 msgstr ""
 
-#: ../classes/Reporters/PluginsReporter.php:37
-msgid "Plugins"
-msgstr ""
-
 #: ../classes/Reporters/PluginsReporter.php:47
 msgid "A detailed list of all available plugins, their version and statuses"
-msgstr ""
-
-#: ../classes/Reporters/StatisticsReporter.php:15
-msgid "Statistics"
 msgstr ""
 
 #: ../classes/Reporters/StatisticsReporter.php:25
 msgid ""
 "Various statistics, includeing the number of posts, pages, comments, users, "
 "etc."
-msgstr ""
-
-#: ../classes/Reporters/ThemesReporter.php:40
-msgid "Themes"
 msgstr ""
 
 #: ../classes/Reporters/ThemesReporter.php:50
