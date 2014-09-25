@@ -24,22 +24,32 @@ class Plugin {
 	 */
 	public function __construct()
     {
-		/* Register and load textdomain */
+		/*
+		    Register and load textdomain
+         */
 		load_plugin_textdomain('easydebuginfo', null, dirname(JD_EASYDEBUGINFO_BASENAME) . '/languages/');
 
-		/* Add custom "Generate Report" link to plugin actions */
+		/*
+		    Add custom "Generate Report" link to plugin actions
+         */
 		add_action('plugin_action_links_' . JD_EASYDEBUGINFO_BASENAME, array($this, 'addPluginActionLink'));
 
-		/* Register Options Page */
+		/*
+    	   Register options page and its styles
+         */
 		add_action('admin_menu', array($this, 'registerToolsPage'));
-
-		/* Register styles for options page */
 		add_action('admin_enqueue_scripts', array($this, 'registerToolsPageScripts'));
 
-		/* Register custom actions for ajax */
+		/*
+		    Register custom actions for ajax and file downloads
+         */
 		add_action('wp_ajax_easydebuginfo_generate_report', array($this, 'ajaxGenerateReport'));
-
         add_action('admin_post_easydebuginfo_download_report', array($this, 'downloadReport'));
+
+        /*
+            Add filter to register default reporters
+         */
+        add_filter('easydebuginfo/reporters', array($this, 'registerDefaultReporters'), 1);
 	}
 
 
@@ -336,5 +346,37 @@ class Plugin {
         echo $this->renderReport($report);
         die;
 	}
+
+
+
+
+
+    /**************************************************************************\
+    *                                REPORTERS                                 *
+    \**************************************************************************/
+
+    /**
+     * Register default reporters
+     *
+     * @since 1.2.0
+     * @action easydebuginfo/reporters
+     *
+     * @param  array $reporters
+     * @return array
+     */
+    public function registerDefaultReporters($reporters)
+    {
+        $defaultReporters = array(
+            'jdpowered\EasyDebugInfo\Reporters\GeneralReporter',
+            'jdpowered\EasyDebugInfo\Reporters\EnvironmentReporter',
+            'jdpowered\EasyDebugInfo\Reporters\DatabaseReporter',
+            'jdpowered\EasyDebugInfo\Reporters\StatisticsReporter',
+            'jdpowered\EasyDebugInfo\Reporters\ThemesReporter',
+            'jdpowered\EasyDebugInfo\Reporters\PluginsReporter',
+            'jdpowered\EasyDebugInfo\Reporters\CronReporter',
+        );
+        return array_merge($reporters, $defaultReporters);
+    }
+
 
 }
