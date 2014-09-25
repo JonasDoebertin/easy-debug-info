@@ -29,7 +29,12 @@ You will find 'Easy Debug Info' within the Tools menu in your WordPress admin pa
 
 == Frequently Asked Questions ==
 
-None, yet...
+= Why does Easy Debug Info require PHP 5.3? =
+
+Yes, I am aware of the fact that WordPress itself requires only PHP 5.2. And yes, I am also aware that it's not a good practice to create a plugin that doesn't stick to this requirements. Easy Debug Info requires PHP 5.3 or above anyways. There are two main reasons for this decision:
+
+* **Security**: PHP 5.2 was released back in November 2006 and was maintained and updated until January 2011. This means that it’s now considered an old release that’s no longer supported. Should a new vulnerability be discovered in PHP 5.2, it will remain unfixed.
+* **Features**: PHP 5.3 adds a lot of new features and transforms PHP into a more modern language supporting closures, anonymous functions, namespace, etc. I don't want to miss these features while developing a plugin.
 
 == Screenshots ==
 
@@ -44,6 +49,10 @@ None, yet...
 
 * Added Scheduled Events reports
 * Developers may register their own reporters
+
+** Further Notes**
+
+* Updated language files: en_US & de_DE
 
 = 1.1.0 =
 
