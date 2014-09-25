@@ -38,6 +38,7 @@ class ReporterManager {
         $this->registerReporter('jdpowered\EasyDebugInfo\Reporters\StatisticsReporter');
         $this->registerReporter('jdpowered\EasyDebugInfo\Reporters\ThemesReporter');
         $this->registerReporter('jdpowered\EasyDebugInfo\Reporters\PluginsReporter');
+        $this->registerReporter('jdpowered\EasyDebugInfo\Reporters\CronReporter');
     }
 
 
